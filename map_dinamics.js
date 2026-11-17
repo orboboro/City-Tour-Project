@@ -1,3 +1,10 @@
+let mappa = L.map('mappa').setView([40.8351, 14.2486], 13);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    minZoom : 10,
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(mappa);
+
 let tour = [
             {
                 nome: "Napoli reale e lungomare",
@@ -24,37 +31,54 @@ let tour = [
             }
             ];
 
-let pin = L.marker([40.8351, 14.2486]).addTo(mappa);
-pin.bindPopup("<b>Napoli</b><br>città.");
 
 // Il layerGroup di Leaflet è un contenitore. livello parte vuoto. Ogni linea o pin che aggiungeremo con .addTo(livello) finirà lì dentro, e livello.clearLayers() lo svuoterà.
-var livello = L.layerGroup().addTo(mappa);
+let livello = L.layerGroup().addTo(mappa);
 
 function showGeneral() {
-  livello.clearLayers();                                   // 1. svuota la mappa
-  document.getElementById('indietro').style.display = 'none';   // 2. nasconde il pulsante
+  livello.clearLayers();
+  document.getElementById('indietro').style.display = 'none';
   document.getElementById('titolo').textContent = 'Clicca su un percorso per vedere il tour';
 
-  var tutteLeCoordinate = [];
+  let tutteLeCoordinate = [];
 
-  tour.forEach(function (t) {                              // 3. per ogni tour...
-    var coords = t.punti.map(function (p) { return p.coord; });   // lista delle sole coordinate
+  tour.forEach(function (t) {
+    let coords = t.punti.map(function (p) { return p.coord; });
 
-    var linea = L.polyline(coords, { color: t.colore, weight: 6 }).addTo(livello);
-    linea.bindTooltip(t.nome, { sticky: true });           // etichetta al passaggio del mouse
-    linea.on('click', function () { mostraTour(t); });     // al clic, apri questo tour
+    let linea = L.polyline(coords, { color: t.colore, weight: 6 }).addTo(livello);
+    linea.bindTooltip(t.nome, { sticky: true });
+    linea.on('click', function () { showTour(t); });
 
     tutteLeCoordinate = tutteLeCoordinate.concat(coords);
   });
 
-  mappa.fitBounds(tutteLeCoordinate);                      // 4. inquadra tutti i percorsi
+  mappa.fitBounds(tutteLeCoordinate);
 }
 
+// tour.forEach(function (t) {...}) ripete il blocco una volta per ogni tour dell’elenco, e dentro t è il tour corrente.
+// t.punti.map(...) estrae da ogni punto solo le coordinate, perché L.polyline vuole una lista di coordinate.
+// L.polyline(coords, {...}) disegna una linea che passa per i punti. color è il colore e weight lo spessore in pixel (6 la rende facile da cliccare).
+// bindTooltip mostra il nome del tour mentre il mouse è sopra la linea. Sul telefono non esiste il “passaggio del mouse”, quindi lì si vede solo toccando.
+// linea.on('click', ...) dice: “quando qualcuno clicca questa linea, esegui showTour(t)”. Quella funzione la scriviamo al passo successivo.
+// fitBounds(...) sposta e zooma la mappa in modo da far stare tutti quei punti nello schermo.
 
+function showTour(t) {
+  livello.clearLayers();                                   // svuota: via le altre linee
+  document.getElementById('indietro').style.display = 'inline';
+  document.getElementById('titolo').textContent = t.nome + ' – ' + t.descrizione;
 
-let mappa = L.map('mappa').setView([40.8351, 14.2486], 13);
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    minZoom : 10,
-    maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(mappa);
+  let coords = t.punti.map(function (p) { return p.coord; });
+
+  L.polyline(coords, { color: t.colore, weight: 4 }).addTo(livello);   // il percorso
+
+  t.punti.forEach(function (p) {                           // un pin per ogni punto
+    L.marker(p.coord).addTo(livello)
+      .bindPopup('<b>' + p.nome + '</b><br>' + p.testo);
+  });
+
+  mappa.fitBounds(coords);                                 // zoom su questo tour
+}
+
+document.getElementById('indietro').addEventListener('click', showGeneral);
+
+showGeneral();
