@@ -1,39 +1,44 @@
-// 1. Array con i 5 percorsi culturali di default a Napoli
+// 1. Array con i 5 percorsi culturali a Napoli
 const percorsiNapoli = [
   {
-    id: "centro-storico",
-    titolo: "Decumani e Centro Storico",
-    ruolo: "Guiderai i visitatori tra Spaccanapoli, San Gregorio Armeno e le chiese barocche, raccontando leggende e storia millenaria.",
-    competenze: "Passione per storia dell'arte, buona dialettica, gestione gruppi.",
-    impegno: "Sabato mattina (3 ore)"
+    id: "Tour-Marittimo",
+    titolo: "Tour Marittimo",
+    immagine: "../../assets/img/centro-storico.jpg",
+    ruolo: "Guiderai un'escursione a impatto zero in kayak o SUP dalla Spiaggetta delle Monache alla Baia di Trentaremi, esplorando grotte marine e conducendo attività di citizen science.",
+    competenze: "Studenti di biologia marina o scienze ambientali, acquaticità e dimestichezza con kayak o SUP.",
+    impegno: "2,5 - 3 ore (30 min briefing, 1,5 ore pagaiata, 45 min snorkeling e monitoraggio)"
   },
   {
-    id: "quartieri-spagnoli",
-    titolo: "Street Art ai Quartieri Spagnoli",
-    ruolo: "Accompagnerai il gruppo alla scoperta dei murales contemporanei, dei vicoli storici e della cultura pop napoletana.",
-    competenze: "Cultura contemporanea, dinamismo, inglese base.",
-    impegno: "Venerdì pomeriggio (2.5 ore)"
+    id: "tour-bici",
+    titolo: "Tour in Bici",
+    immagine: "../../assets/img/quartieri-spagnoli.jpg",
+    ruolo: "Condurrai un itinerario ciclo-naturalistico dalla Stazione di Bagnoli tra il Cratere degli Astroni, Monte Nuovo e il Lago d'Averno, spiegando il bradisismo e la storia vulcanica.",
+    competenze: "Studenti di geologia o scienze naturali, abitudine ai sentieri sterrati in bici e approccio conviviale.",
+    impegno: "3,5 - 4 ore (2 ore pedalata di 15-20 km + soste panoramiche e racconti)"
   },
   {
-    id: "napoli-esoterica",
-    titolo: "Napoli Esoterica e Misteri",
-    ruolo: "Un percorso serale incentrato su miti, fantasmi, alchimia e storie nascoste tra Piazza San Domenico e il Rione Sanità.",
-    competenze: "Ottime doti di storytelling e coinvolgimento emotivo.",
-    impegno: "Sabato sera (2 ore)"
+    id: "tour-famiglie",
+    titolo: "Tour per Famiglie",
+    immagine: "../../assets/img/napoli-esoterica.jpg",
+    ruolo: "Accompagnerai famiglie lungo i 414 gradini della Pedamentina e nel Borgo del Petraio, trasformando la passeggiata in una fiaba urbana con giochi didattici e cacce al dettaglio.",
+    competenze: "Studenti di pedagogia, architettura o beni culturali con attitudine all'animazione per bambini.",
+    impegno: "2 ore (1 ora camminata lenta in discesa + 1 ora giochi didattici e merenda)"
   },
   {
-    id: "lungomare-castelli",
-    titolo: "Lungomare e i Castelli sul Mare",
-    ruolo: "Passeggiata panoramica da Castel Nuovo a Castel dell'Ovo per spiegare l'evoluzione marittima e reale della città.",
-    competenze: "Conoscenze storiche, resistenza fisica per percorsi a piedi.",
-    impegno: "Domenica mattina (3 ore)"
+    id: "tour-gastronomico",
+    titolo: "Tour Gastronomico",
+    immagine: "../../assets/img/lungomare-castelli.jpg",
+    ruolo: "Guiderai uno slow walking tour da Porta San Gennaro tra i vicoli del Rione Sanità e dei Vergini, visitando panifici storici, orti urbani comunitari e botteghe antispreco.",
+    competenze: "Studenti fuori sede o locali appassionati di cultura gastronomica, consumo consapevole ed economia circolare.",
+    impegno: "3 ore (1,5 ore passeggiata nei vicoli + 1,5 ore in 4-5 tappe di assaggio)"
   },
   {
-    id: "vomero-liberty",
-    titolo: "Vomero Liberty e Castel Sant'Elmo",
-    ruolo: "Tour architettonico tra le ville in stile Liberty, le scale monumentali (Pedamentina) e la vista panoramica sulla città.",
-    competenze: "Interesse per architettura e urbanistica, inglese intermedio.",
-    impegno: "Domenica pomeriggio (2.5 ore)"
+    id: "tour-culturale",
+    titolo: "Tour Culturale",
+    immagine: "../../assets/img/vomero-liberty.jpg",
+    ruolo: "Svelerai i tesori gotici e medievali nascosti da Piazza Calenda tra Forcella e il Lavinaio (Donnaregina Vecchia, San Pietro ad Aram, Sant'Eligio) senza tecnicismi accademici.",
+    competenze: "Studenti di storia dell'arte o conservazione dei beni culturali con ottime doti narrative.",
+    impegno: "2,5 ore (1 ora spostamento a piedi + 1,5 ore visite interne a chiese e chiostri)"
   }
 ];
 
@@ -48,6 +53,7 @@ function inizializzaPagina() {
     card.className = "card-tour";
     card.innerHTML = `
       <div>
+        <img src="${tour.immagine}" alt="Immagine del tour ${tour.titolo}" class="foto-tour">
         <h3>${tour.titolo}</h3>
         <p>${tour.ruolo}</p>
         <div class="dettaglio-ruolo">

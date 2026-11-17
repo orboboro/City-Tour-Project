@@ -1,3 +1,13 @@
+/* Variabili della palette colori del progetto */
+:root {
+  --verde-natura: #386B50;
+  --acqua-marina: #87B8B0;
+  --sabbia: #E8D6B4;
+  --terracotta: #D7794C;
+  --avorio: #FAF7F0;
+  --testo-scuro: #24332B;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,16 +16,17 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f7f9;
-  color: #2c3e50;
+  background-color: var(--avorio);
+  color: var(--testo-scuro);
   line-height: 1.6;
 }
 
 .hero {
-  background: linear-gradient(135deg, #005b96, #03396c);
-  color: white;
+  background: linear-gradient(135deg, var(--verde-natura), #284E3A);
+  color: var(--avorio);
   text-align: center;
-  padding: 3rem 1.5rem;
+  padding: 3.5rem 1.5rem;
+  border-bottom: 5px solid var(--acqua-marina);
 }
 
 .hero h1 {
@@ -27,23 +38,23 @@ body {
   max-width: 700px;
   margin: 0 auto;
   font-size: 1.1rem;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 .container {
   max-width: 1100px;
-  margin: 2rem auto;
+  margin: 2.5rem auto;
   padding: 0 1.5rem;
 }
 
 h2 {
-  color: #03396c;
+  color: var(--verde-natura);
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
 }
 
 .sottotitolo {
-  color: #5a6c7d;
+  color: #4F6358;
   margin-bottom: 2rem;
 }
 
@@ -56,25 +67,40 @@ h2 {
 }
 
 .card-tour {
-  background: white;
+  background-color: #FFFFFF;
   border-radius: 10px;
   padding: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 12px rgba(56, 107, 80, 0.08);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-top: 5px solid #f39c12;
+  border-top: 6px solid var(--terracotta);
+  border-left: 1px solid var(--sabbia);
+  border-right: 1px solid var(--sabbia);
+  border-bottom: 1px solid var(--sabbia);
 }
 
+.foto-tour {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover; /* Taglia l'immagine in modo proporzionato senza schiacciarla */
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  flex-shrink: 0; /* Impedisce alla foto di rimpicciolirsi se il testo è lungo */
+}
+
+
 .card-tour h3 {
-  color: #005b96;
+  color: var(--verde-natura);
   margin-bottom: 0.8rem;
   font-size: 1.3rem;
 }
 
 .dettaglio-ruolo {
-  background-color: #f8fafc;
-  padding: 0.8rem;
+  background-color: rgba(232, 214, 180, 0.35); /* Sabbia leggero */
+  border-left: 3px solid var(--acqua-marina);
+  padding: 0.85rem;
   border-radius: 6px;
   margin: 1rem 0;
   font-size: 0.92rem;
@@ -85,38 +111,40 @@ h2 {
 }
 
 .btn-scegli {
-  background-color: #005b96;
-  color: white;
+  background-color: var(--verde-natura);
+  color: var(--avorio);
   border: none;
-  padding: 0.75rem 1rem;
+  padding: 0.8rem 1rem;
   border-radius: 6px;
   cursor: pointer;
   font-weight: bold;
-  transition: background 0.2s;
+  transition: background-color 0.2s, color 0.2s;
   width: 100%;
 }
 
 .btn-scegli:hover {
-  background-color: #03396c;
+  background-color: var(--acqua-marina);
+  color: var(--testo-scuro);
 }
 
 /* Sezione Form */
 .box-form {
-  background: white;
+  background-color: #FFFFFF;
   padding: 2.5rem;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 15px rgba(56, 107, 80, 0.1);
+  border: 1px solid var(--sabbia);
   margin-bottom: 3rem;
 }
 
 .gruppo-campi {
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid #e1e8ed;
+  border-bottom: 1px solid var(--sabbia);
 }
 
 .gruppo-campi h3 {
-  color: #005b96;
+  color: var(--verde-natura);
   margin-bottom: 1rem;
   font-size: 1.2rem;
 }
@@ -142,6 +170,7 @@ h2 {
   font-weight: 600;
   margin-bottom: 0.4rem;
   font-size: 0.95rem;
+  color: var(--testo-scuro);
 }
 
 input[type="text"],
@@ -150,20 +179,23 @@ input[type="tel"],
 textarea {
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid #ccd6dd;
+  background-color: var(--avorio);
+  border: 1px solid var(--sabbia);
   border-radius: 6px;
   font-size: 1rem;
   font-family: inherit;
+  color: var(--testo-scuro);
 }
 
 input:focus, textarea:focus {
   outline: none;
-  border-color: #005b96;
+  border-color: var(--verde-natura);
+  box-shadow: 0 0 0 3px rgba(135, 184, 176, 0.3); /* Acqua marina */
 }
 
 .nota {
   font-size: 0.9rem;
-  color: #5a6c7d;
+  color: #4F6358;
   margin-bottom: 0.8rem;
 }
 
@@ -177,15 +209,27 @@ input:focus, textarea:focus {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  background: #f8fafc;
-  padding: 0.7rem;
+  background-color: var(--avorio);
+  padding: 0.75rem;
   border-radius: 6px;
-  border: 1px solid #e1e8ed;
+  border: 1px solid var(--sabbia);
   cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.item-checkbox:hover {
+  border-color: var(--acqua-marina);
+  background-color: rgba(232, 214, 180, 0.3);
+}
+
+.item-checkbox input[type="checkbox"] {
+  accent-color: var(--verde-natura);
+  width: 18px;
+  height: 18px;
 }
 
 .messaggio-errore {
-  color: #d9534f;
+  color: var(--terracotta);
   font-size: 0.9rem;
   display: block;
   margin-top: 0.5rem;
@@ -193,8 +237,8 @@ input:focus, textarea:focus {
 }
 
 .btn-invia {
-  background-color: #f39c12;
-  color: white;
+  background-color: var(--terracotta);
+  color: #FFFFFF;
   border: none;
   padding: 1rem 2rem;
   font-size: 1.1rem;
@@ -202,11 +246,11 @@ input:focus, textarea:focus {
   border-radius: 6px;
   cursor: pointer;
   width: 100%;
-  transition: background 0.2s;
+  transition: background-color 0.2s;
 }
 
 .btn-invia:hover {
-  background-color: #e67e22;
+  background-color: #C26539;
 }
 
 .feedback-nascosto {
@@ -217,8 +261,8 @@ input:focus, textarea:focus {
   display: block;
   margin-top: 1.5rem;
   padding: 1.2rem;
-  background-color: #d4edda;
-  color: #155724;
-  border: 1px solid #c3e6cb;
+  background-color: rgba(135, 184, 176, 0.25); /* Acqua marina chiaro */
+  color: var(--verde-natura);
+  border: 2px solid var(--verde-natura);
   border-radius: 6px;
 }
