@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lavora con noi - Percorsi Culturali Napoli</title>
+  <link rel="stylesheet" href="lavora-con-noi.css">
+</head>
+<body>
+
+  <header class="hero">
+    <h1>Diventa guida dei nostri percorsi a Napoli</h1>
+    <p>Sei uno studente appassionato di arte, storia o cultura urbana? Scopri cosa significa guidare un tour con noi e invia la tua candidatura.</p>
+  </header>
+
+  <main class="container">
+    <!-- USER STORY 1: Presentazione dei 5 tour e del ruolo -->
+    <section id="presentazione-tour">
+      <h2>I nostri 5 percorsi: scopri il tuo ruolo</h2>
+      <p class="sottotitolo">Leggi le caratteristiche di ogni itinerario per capire quale si adatta meglio alle tue passioni e alle tue competenze.</p>
+      
+      <!-- Contenitore riempito dinamicamente da JavaScript -->
+      <div id="griglia-tour" class="griglia-tour"></div>
+    </section>
+
+    <!-- USER STORY 2: Form di candidatura spontanea -->
+    <section id="sezione-candidatura" class="box-form">
+      <h2>Candidatura spontanea</h2>
+      <p class="sottotitolo">Compila i tuoi dati, raccontaci le tue esperienze e seleziona i tour per cui vorresti candidarti.</p>
+
+      <form id="form-candidatura">
+        <div class="gruppo-campi">
+          <h3>1. Dati anagrafici e di studio</h3>
+          <div class="riga-form">
+            <div class="campo">
+              <label for="nome">Nome *</label>
+              <input type="text" id="nome" placeholder="Es. Marco" required>
+            </div>
+            <div class="campo">
+              <label for="cognome">Cognome *</label>
+              <input type="text" id="cognome" placeholder="Es. Esposito" required>
+            </div>
+          </div>
+
+          <div class="riga-form">
+            <div class="campo">
+              <label for="email">Email *</label>
+              <input type="email" id="email" placeholder="marco.esposito@studenti.it" required>
+            </div>
+            <div class="campo">
+              <label for="telefono">Telefono *</label>
+              <input type="tel" id="telefono" placeholder="Es. 333 1234567" required>
+            </div>
+          </div>
+
+          <div class="campo">
+            <label for="studi">Scuola o Facoltà frequentata *</label>
+            <input type="text" id="studi" placeholder="Es. Beni Culturali - Federico II" required>
+          </div>
+        </div>
+
+        <div class="gruppo-campi">
+          <h3>2. Preferenza dei tour *</h3>
+          <p class="nota">Seleziona uno o più percorsi che saresti disposto a guidare:</p>
+          <!-- Contenitore riempito dinamicamente da JavaScript -->
+          <div id="checkbox-tour" class="lista-checkbox"></div>
+          <span id="errore-tour" class="messaggio-errore"></span>
+        </div>
+
+        <div class="gruppo-campi">
+          <h3>3. Esperienze pregresse e motivazione</h3>
+          <div class="campo">
+            <label for="lingue">Lingue conosciute (oltre all'italiano)</label>
+            <input type="text" id="lingue" placeholder="Es. Inglese B2, Spagnolo A2">
+          </div>
+          <div class="campo">
+            <label for="esperienze">Esperienze passate, volontariato o passioni</label>
+            <textarea id="esperienze" rows="4" placeholder="Raccontaci se hai già fatto da guida, animazione, teatro, volontariato o perché ti piacerebbe partecipare..."></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-invia">Invia la tua candidatura</button>
+      </form>
+
+      <!-- Messaggio di conferma mostrato dopo l'invio -->
+      <div id="feedback-invio" class="feedback-nascosto"></div>
+    </section>
+  </main>
+
+  <script src="lavora-con-noi.js"></script>
+</body>
+</html>
