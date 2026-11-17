@@ -1,7 +1,7 @@
 let mappa = L.map('mappa').setView([40.8351, 14.2486], 13);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    minZoom : 10,
+    minZoom : 1,
     maxZoom: 19,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(mappa);
@@ -51,7 +51,11 @@ function showTour(t) {
 
   t.hotspots.forEach(function (p) {
     L.marker(p.coord).addTo(livello)
-      .bindPopup('<b>' + p.nome + '</b><br>' + p.testo);
+      .bindPopup(
+        '<b>' + p.nome + '</b>' +
+        '<br>' + p.testo + '</b>' +
+        '<img src ="images/hotspot_images/' + p.image + '" style="width: 200px; height: 130px">'
+      )
   });
 
   mappa.fitBounds(coords);
