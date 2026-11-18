@@ -1,0 +1,280 @@
+/* Variabili della palette colori del progetto */
+:root {
+  --verde-natura: #386B50;
+  --acqua-marina: #87B8B0;
+  --sabbia: #E8D6B4;
+  --terracotta: #D7794C;
+  --avorio: #FAF7F0;
+  --testo-scuro: #24332B;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--avorio);
+  color: var(--testo-scuro);
+  line-height: 1.6;
+}
+
+/* Header e Navbar identici alla Homepage */
+.hero {
+  background: linear-gradient(135deg, var(--verde-natura), #284E3A);
+  color: var(--avorio);
+  border-bottom: 5px solid var(--acqua-marina);
+}
+
+.navbar-hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-bottom: 1px solid rgba(250, 247, 240, 0.15);
+}
+
+.navbar-hero .logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-hero .logo img {
+  height: 75px;
+  width: auto;
+  border-radius: 4px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: var(--avorio);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.98rem;
+  padding: 0.55rem 0.95rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Colore sabbia (#E8D6B4) al passaggio del mouse */
+.nav-links a:hover {
+  color: #E8D6B4;
+}
+
+/* Tasto attivo con testo bianco e riquadro pulito come nella tua foto */
+.nav-links a.attivo {
+  color: var(--avorio);
+  border-color: rgba(250, 247, 240, 0.75);
+}
+
+/* Mantiene il colore sabbia al passaggio del mouse anche sul tasto attivo */
+.nav-links a.attivo:hover {
+  color: #E8D6B4;
+  border-color: #E8D6B4;
+}
+
+
+.hero-contenuto {
+  text-align: center;
+  padding: 2.5rem 1.5rem 3.5rem;
+}
+
+.hero-contenuto h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.hero-contenuto p {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+/* Contenuto principale */
+.container {
+  max-width: 1100px;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
+}
+
+h2 {
+  color: var(--verde-natura);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.sottotitolo {
+  color: #4F6358;
+  margin-bottom: 2rem;
+}
+
+/* Box introduttivo chi siamo */
+.box-intro {
+  background-color: #FFFFFF;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--sabbia);
+  box-shadow: 0 4px 12px rgba(56, 107, 80, 0.08);
+  margin-bottom: 3rem;
+}
+
+.box-intro p {
+  font-size: 1.05rem;
+  margin-bottom: 1.2rem;
+}
+
+.nota-etica {
+  background-color: rgba(232, 214, 180, 0.4);
+  border-left: 4px solid var(--terracotta);
+  padding: 1rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+/* Griglia dei 3 pilastri della Vision */
+.griglia-pilastri {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.card-pilastro {
+  background-color: #FFFFFF;
+  padding: 1.8rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(56, 107, 80, 0.08);
+  border: 1px solid var(--sabbia);
+}
+
+.card-pilastro h3 {
+  color: var(--verde-natura);
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+}
+
+.bordo-verde {
+  border-top: 6px solid var(--verde-natura);
+}
+
+.bordo-terracotta {
+  border-top: 6px solid var(--terracotta);
+}
+
+.bordo-acqua {
+  border-top: 6px solid var(--acqua-marina);
+}
+
+/* Sezione Impatto Socio-Ambientale */
+.box-impatto {
+  background-color: #FFFFFF;
+  padding: 2.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--sabbia);
+  box-shadow: 0 4px 15px rgba(56, 107, 80, 0.1);
+  margin-bottom: 3rem;
+}
+
+.griglia-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 2.5rem;
+}
+
+.card-stat {
+  background-color: var(--avorio);
+  border: 1px solid var(--sabbia);
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.numero-stat {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--terracotta);
+  margin-bottom: 0.4rem;
+}
+
+.titolo-stat {
+  font-weight: bold;
+  color: var(--verde-natura);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.dettaglio-stat {
+  font-size: 0.88rem;
+  color: #4F6358;
+}
+
+/* Calcolatore interattivo */
+.calcolatore-box {
+  background-color: rgba(135, 184, 176, 0.18);
+  border: 1px solid var(--acqua-marina);
+  border-radius: 10px;
+  padding: 1.8rem;
+}
+
+.calcolatore-box h3 {
+  color: var(--verde-natura);
+  margin-bottom: 0.4rem;
+}
+
+.controlli-calcolatore {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.2rem;
+  flex-wrap: wrap;
+}
+
+select {
+  flex: 1;
+  min-width: 250px;
+  padding: 0.8rem;
+  border-radius: 6px;
+  border: 1px solid var(--verde-natura);
+  background-color: #FFFFFF;
+  font-size: 1rem;
+  color: var(--testo-scuro);
+}
+
+.btn-calcola {
+  background-color: var(--verde-natura);
+  color: var(--avorio);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-calcola:hover {
+  background-color: var(--terracotta);
+}
+
+.risultato-box {
+  margin-top: 1.2rem;
+  padding: 1rem;
+  background-color: #FFFFFF;
+  border-left: 4px solid var(--verde-natura);
+  border-radius: 6px;
+  display: none;
+}
