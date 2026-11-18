@@ -1,7 +1,7 @@
 let mappa = L.map('mappa').setView([40.8351, 14.2486], 13);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    minZoom : 1,
+    minZoom : 11,
     maxZoom: 19,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(mappa);
@@ -17,7 +17,8 @@ let livello = L.layerGroup().addTo(mappa);
 function showGeneral() {
   livello.clearLayers();
   document.getElementById('indietro').style.display = 'none';
-  document.getElementById('titolo').textContent = 'Clicca su un path per vedere il tour';
+  document.getElementById('titolo-tour').textContent = 'Clicca su un tour per vedere i dettagli';
+  document.getElementById('titolo-tour').style.removeProperty('--colore-tour');
 
   let tutteLeCoordinate = [];
 
@@ -43,7 +44,8 @@ function showGeneral() {
 function showTour(t) {
   livello.clearLayers();                                   // svuota: via le altre linee
   document.getElementById('indietro').style.display = 'inline';
-  document.getElementById('titolo').textContent = t.nome + ' – ' + t.descrizione;
+  document.getElementById('titolo-tour').textContent = t.nome + ' – ' + t.descrizione;
+  document.getElementById('titolo-tour').style.setProperty('--colore-tour', t.colore);
 
   let coords = latLon(t.path);
 
@@ -54,7 +56,7 @@ function showTour(t) {
       .bindPopup(
         '<b>' + p.nome + '</b>' +
         '<br>' + p.testo + '</b>' +
-        '<img src ="images/hotspot_images/' + p.image + '" style="width: 200px; height: 130px">'
+        '<img src ="map/images/hotspot_images/' + p.image + '" style="width: 200px; height: 130px">'
       )
   });
 

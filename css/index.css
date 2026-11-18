@@ -295,6 +295,16 @@ header nav ul li a:hover {
     color: var(--primary-color);
 }
 
+#mappa {
+    width: 100%;
+     max-width: 800px;
+      margin: 0 auto;
+}
+
+#titolo-tour {
+    color: var(--colore-tour, black);
+    line-height: 1.2;
+  }
 
 /* =========================================
    8. TURISMO ETICO
