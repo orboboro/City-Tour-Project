@@ -12,6 +12,9 @@
 
     <link rel="stylesheet" href="css/index.css">
     <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"> <!-- css per la mappa -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script> <!-- script per la mappa -->
+   
 </head>
 
 <body>
@@ -133,6 +136,16 @@
                 Non semplici visite turistiche, ma occasioni per conoscere
                 la storia, la cultura e le persone che rendono unica Napoli.
             </p>
+
+            <!-- MAPPA DINAMICA -->
+
+            <div>
+            <button id="indietro" style="display: none;">← Tutti i tour</button>
+            <span id="titolo"></span>
+            </div>
+            <div id="mappa" style="height: 500px;  width: 800px"></div>
+            <script src="map/tours.js"></script>
+            <script src="map/map_dynamics.js"></script>
 
             <div class="tours-container">
 
