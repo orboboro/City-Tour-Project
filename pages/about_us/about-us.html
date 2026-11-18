@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi siamo - Sentieri Partenopei</title>
+  <link rel="stylesheet" href="about-us.css">
+</head>
+<body>
+
+  <header class="hero">
+    <nav class="navbar-hero">
+      <a href="../../index.html" class="logo">
+        <img src="../../assets/icons/logo_con_sfondo.svg" alt="Logo Sentieri Partenopei">
+      </a>
+      <div class="nav-links">
+        <a href="../../index.html">Homepage</a>
+        <a href="#">I nostri tour</a>
+        <a href="about-us.html" class="attivo">Chi siamo</a>
+        <a href="#">I nostri valori</a>
+        <a href="#">Turismo etico</a>
+        <a href="../lavora_con_noi/lavora-con-noi.html">Lavora con noi</a>
+      </div>
+    </nav>
+
+    <div class="hero-contenuto">
+      <h1>Chi siamo e la nostra Vision</h1>
+      <p>Una comunità studentesca dell'Università Federico II che promuove un turismo lento, etico e sostenibile a Napoli.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- USER STORY 1: Chi siamo e Vision del progetto -->
+    <section id="vision-progetto">
+      <div class="box-intro">
+        <h2>La nostra identità</h2>
+        <p>
+          Siamo una comunità studentesca eterogenea dell'<strong>Università degli Studi di Napoli Federico II</strong> che ha avviato un progetto di cittadinanza attiva. Organizziamo percorsi culturali sostenibili per far vivere Napoli in modo autentico, lontano dal turismo di massa.
+        </p>
+        <div class="nota-etica">
+          <strong>Il nostro modello etico:</strong> Il progetto e la prenotazione sul sito sono completamente gratuiti e accessibili a tutti. A fine tour è gradita una donazione libera per sostenere il lavoro e gli studi delle guide.
+        </div>
+      </div>
+
+      <h2>I 3 pilastri della nostra filosofia</h2>
+      <p class="sottotitolo">Il nostro intento a lungo termine è trasformare il modo di visitare Napoli agendo su tre fronti concreti.</p>
+
+      <div class="griglia-pilastri">
+        <article class="card-pilastro bordo-verde">
+          <h3>1. Fronte Ecologico</h3>
+          <p>Promuoviamo esclusivamente tour con mezzi a impatto ambientale nullo o minimo come camminate, kayak, biciclette e monopattini elettrici. Le esperienze gastronomiche valorizzano prodotti a km 0 e integrano la tradizione napoletana con opzioni plant-based.</p>
+        </article>
+
+        <article class="card-pilastro bordo-terracotta">
+          <h3>2. Fronte Sociale</h3>
+          <p>Sosteniamo un turismo lento, attento alle tradizioni e alle persone che abitano i quartieri. Vogliamo che il turista viva la città invece di consumarla, contrastando la gentrificazione e favorendo la convivenza tra visitatori e residenti.</p>
+        </article>
+
+        <article class="card-pilastro bordo-acqua">
+          <h3>3. Fronte dell'Accessibilità</h3>
+          <p>La sostenibilità non deve essere costosa, faticosa o riservata a un'élite. Rendiamo i percorsi ecologici e culturali facilmente raggiungibili da chiunque desideri scoprire la vera identità del territorio.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- USER STORY 2: Testimonianza sull'impatto socio-ambientale -->
+    <section id="impatto-ambientale" class="box-impatto">
+      <h2>Il nostro impatto socio-ambientale in numeri</h2>
+      <p class="sottotitolo">Dati verificati e aggiornati sull'attività dei nostri percorsi e sui benefici generati per la città di Napoli.</p>
+
+      <!-- Griglia KPI generata dinamicamente da JavaScript -->
+      <div id="griglia-statistiche" class="griglia-stats"></div>
+
+      <!-- Calcolatore interattivo per coinvolgere l'utente -->
+      <div class="calcolatore-box">
+        <h3>Calcola il tuo risparmio di CO₂ partecipando a un tour</h3>
+        <p>Seleziona uno dei nostri 5 percorsi per confrontare le emissioni rispetto a un tradizionale bus turistico urbano.</p>
+        
+        <div class="controlli-calcolatore">
+          <select id="select-tour-impatto">
+            <option value="0">1. Tour Marittimo (Kayak - 6 km in mare)</option>
+            <option value="1">2. Tour in Bici (Campi Flegrei - 18 km)</option>
+            <option value="2">3. Tour per Famiglie (Pedamentina - 3,5 km a piedi)</option>
+            <option value="3">4. Tour Gastronomico (Rione Sanità - 4 km a piedi)</option>
+            <option value="4">5. Tour Culturale (Gotico dimenticato - 4,5 km a piedi)</option>
+          </select>
+          <button type="button" id="btn-calcola" class="btn-calcola">Calcola impatto</button>
+        </div>
+
+        <div id="risultato-calcolo" class="risultato-box"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="about-us.js"></script>
+</body>
+</html>
