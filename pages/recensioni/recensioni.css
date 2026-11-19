@@ -1,0 +1,439 @@
+/* =========================================
+   PAGINA RECENSIONI
+   Stile analogo a lavora-con-noi.css.
+   Funziona sia con index.css collegato prima, sia da solo.
+========================================= */
+
+/* Variabili della palette colori del progetto */
+:root {
+  --verde-natura: #386B50;
+  --acqua-marina: #87B8B0;
+  --sabbia: #E8D6B4;
+  --terracotta: #D7794C;
+  --avorio: #FAF7F0;
+  --testo-scuro: #24332B;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--avorio);
+  color: var(--testo-scuro);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* =========================================
+   HEADER / NAVBAR (aspetto della hero di lavora-con-noi)
+========================================= */
+
+header {
+  position: static;
+  background: linear-gradient(135deg, var(--verde-natura), #284E3A);
+  color: var(--avorio);
+  box-shadow: none;
+}
+
+header nav {
+  max-width: 1200px;
+  min-height: 0;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid rgba(250, 247, 240, 0.15);
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+}
+
+header .logo img {
+  height: 75px;
+  width: auto;
+  border-radius: 4px;
+}
+
+header nav ul {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-left: 0;
+}
+
+header nav ul li a {
+  display: inline-block;
+  color: var(--avorio);
+  font-weight: 600;
+  font-size: 0.98rem;
+  padding: 0.55rem 0.95rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  white-space: normal;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+header nav ul li a:hover {
+  color: #E8D6B4;
+}
+
+/* Il link verso questa pagina appare "attivo" (riquadro chiaro),
+   senza bisogno di aggiungere classi all'HTML */
+header nav ul li a[href$="recensioni.html"] {
+  border-color: rgba(250, 247, 240, 0.75);
+}
+
+header nav ul li a[href$="recensioni.html"]:hover {
+  border-color: #E8D6B4;
+}
+
+/* =========================================
+   INTESTAZIONE (continua la hero)
+========================================= */
+
+.reviews-intro {
+  background: linear-gradient(135deg, var(--verde-natura), #284E3A);
+  color: var(--avorio);
+  border-bottom: 5px solid var(--acqua-marina);
+  text-align: center;
+  padding: 3rem 1.5rem 3.5rem;
+}
+
+.reviews-intro h1 {
+  color: var(--avorio);
+  font-size: 2.2rem;
+  line-height: 1.2;
+  margin-bottom: 0.8rem;
+}
+
+.reviews-intro p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+/* =========================================
+   SEZIONI E TITOLI
+========================================= */
+
+.top-reviews,
+.all-reviews,
+.review-form-section {
+  max-width: 1100px;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
+  text-align: left;
+  background: none;
+}
+
+h2 {
+  color: var(--verde-natura);
+  font-size: 1.8rem;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+/* =========================================
+   BACHECA E SCHEDE RECENSIONE
+========================================= */
+
+.reviews-board {
+  max-width: none;
+  margin: 1.5rem 0 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Messaggio "nessuna recensione" a tutta larghezza */
+.reviews-board > p {
+  grid-column: 1 / -1;
+}
+
+/* Bacheca dei filtri: riquadro bianco scorribile */
+.reviews-board.scrollable {
+  background-color: #FFFFFF;
+  border: 1px solid var(--sabbia);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(56, 107, 80, 0.1);
+  padding: 1.5rem;
+  max-height: 650px;
+  overflow-y: auto;
+  margin-bottom: 4rem;
+}
+
+.review-card {
+  flex: none;
+  max-width: none;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(56, 107, 80, 0.08);
+  border-top: 6px solid var(--terracotta);
+  border-left: 1px solid var(--sabbia);
+  border-right: 1px solid var(--sabbia);
+  border-bottom: 1px solid var(--sabbia);
+  text-align: left;
+  transform: none;
+}
+
+.review-card:hover {
+  transform: none;
+}
+
+.review-card h3 {
+  color: var(--verde-natura);
+  font-size: 1.3rem;
+  line-height: 1.2;
+  margin-bottom: 0.2rem;
+}
+
+.review-card p {
+  margin-bottom: 0.6rem;
+}
+
+.review-tour {
+  color: var(--terracotta);
+  font-weight: bold;
+  font-size: 0.92rem;
+}
+
+.review-stars {
+  color: var(--terracotta);
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+}
+
+.review-photos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.review-photos img {
+  width: 110px;
+  max-width: 100%;
+  height: 85px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--sabbia);
+}
+
+/* =========================================
+   FILTRI
+========================================= */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.filter-btn {
+  background-color: #FFFFFF;
+  color: var(--verde-natura);
+  border: 1px solid var(--sabbia);
+  padding: 0.7rem 1.1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: bold;
+  font-family: inherit;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.filter-btn:hover {
+  border-color: var(--acqua-marina);
+  background-color: rgba(232, 214, 180, 0.3);
+}
+
+/* Filtro attualmente selezionato */
+.filter-btn.active {
+  background-color: var(--verde-natura);
+  color: var(--avorio);
+  border-color: var(--verde-natura);
+}
+
+.results-count {
+  margin-top: 1.2rem;
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: #4F6358;
+}
+
+/* =========================================
+   FORM (stesso stile di lavora-con-noi)
+========================================= */
+
+.review-form {
+  max-width: none;
+  margin: 1.5rem 0 0;
+  background-color: #FFFFFF;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(56, 107, 80, 0.1);
+  border: 1px solid var(--sabbia);
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.review-form label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--testo-scuro);
+  margin-top: 0.8rem;
+}
+
+.review-form input[type="text"],
+.review-form input[type="email"],
+.review-form select,
+.review-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--avorio);
+  border: 1px solid var(--sabbia);
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--testo-scuro);
+}
+
+.review-form input[type="file"] {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--avorio);
+  border: 1px dashed var(--acqua-marina);
+  border-radius: 6px;
+  font-family: inherit;
+  color: var(--testo-scuro);
+}
+
+.review-form input:focus,
+.review-form select:focus,
+.review-form textarea:focus {
+  outline: none;
+  border-color: var(--verde-natura);
+  box-shadow: 0 0 0 3px rgba(135, 184, 176, 0.3);
+}
+
+.review-form .btn {
+  display: block;
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 1rem 2rem;
+  background-color: var(--terracotta);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-family: inherit;
+  cursor: pointer;
+  transform: none;
+  transition: background-color 0.2s;
+}
+
+.review-form .btn:hover {
+  background-color: #C26539;
+  transform: none;
+}
+
+/* Messaggio dopo l'invio: compare solo quando contiene testo */
+.form-message {
+  margin: 1.5rem 0 3rem;
+  padding: 1.2rem;
+  background-color: rgba(135, 184, 176, 0.25);
+  color: var(--verde-natura);
+  border: 2px solid var(--verde-natura);
+  border-radius: 6px;
+  font-weight: normal;
+}
+
+.form-message:empty {
+  display: none;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+  background-color: var(--verde-natura);
+  color: var(--avorio);
+  text-align: center;
+  padding: 2rem 1.5rem;
+  border-top: 5px solid var(--acqua-marina);
+}
+
+/* =========================================
+   SMARTPHONE
+========================================= */
+
+@media (max-width: 600px) {
+  .reviews-intro h1 {
+    font-size: 1.8rem;
+  }
+
+  .review-form {
+    padding: 1.5rem;
+  }
+
+  .reviews-board.scrollable {
+    padding: 1rem;
+  }
+}
+
+/* DISTANZIAMENTO VOCI DEL MENU */
+body header nav ul,
+body header nav.nav-links,
+body header .nav-links {
+  display: flex;
+  flex: none;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  margin-left: 0;
+}
+
+body header nav ul li a,
+body header .nav-links a {
+  display: inline-block;
+  padding: 0.55rem 0.95rem;
+  font-size: 0.98rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+body header nav ul li a[href$="recensioni.html"] {
+  border-color: rgba(250, 247, 240, 0.75);
+}
