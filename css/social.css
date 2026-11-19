@@ -1,0 +1,328 @@
+/* =========================================
+1. VARIABILI E BASE (IN LINEA CON INDEX.CSS)
+========================================= */
+
+:root {
+    --primary-color: #386850;
+    --secondary-color: #87B8B0;
+    --sand-color: #E8D6B4;
+    --accent-color: #D7794C;
+    --background-color: #FAF7F0;
+    --text-color: #26352D;
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: var(--primary-color);
+    line-height: 1.2;
+}
+
+/* =========================================
+2. PROFILO E IDENTITÀ SOCIAL (HEADER)
+   Nota: usiamo .profile-header per non
+   andare in conflitto con l'header della navbar
+========================================= */
+
+header.profile-header {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    position: static;
+    padding: 70px 30px;
+}
+
+.profile-info {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.profile-logo {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--sand-color);
+    background-color: var(--white);
+    flex-shrink: 0;
+}
+
+.profile-header h1 {
+    color: var(--white);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    margin-bottom: 10px;
+}
+
+.profile-header .tagline {
+    color: var(--sand-color);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.profile-header .bio-description {
+    max-width: 750px;
+    margin-bottom: 20px;
+    color: var(--background-color);
+}
+
+.profile-header ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.profile-header ul li {
+    font-size: 0.98rem;
+}
+
+.profile-header ul li strong {
+    color: var(--sand-color);
+}
+
+/* =========================================
+3. CONTENITORE PRINCIPALE FEED
+========================================= */
+
+.social-feed {
+    width: 100%;
+}
+
+.social-feed section > h2,
+.social-feed section > p {
+    text-align: center;
+}
+
+.social-feed section > p {
+    max-width: 750px;
+    margin: 0 auto 45px;
+    font-size: 1.08rem;
+}
+
+/* =========================================
+4. SEZIONE ECO-CHALLENGES
+========================================= */
+
+.challenges-banner {
+    background-color: var(--sand-color);
+    padding: 80px 30px;
+}
+
+.challenges-banner .challenge-card {
+    max-width: 1100px;
+    margin: 0 auto 25px;
+    background-color: var(--background-color);
+    padding: 35px 30px;
+    border-radius: 15px;
+    border-left: 6px solid var(--primary-color);
+    box-shadow: 0 4px 15px rgba(38, 53, 45, 0.06);
+    transition: transform 0.3s ease;
+}
+
+.challenges-banner .challenge-card:last-child {
+    margin-bottom: 0;
+}
+
+.challenges-banner .challenge-card:hover {
+    transform: translateY(-5px);
+}
+
+.badge-eco {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 6px 14px;
+    border-radius: 30px;
+    margin-bottom: 15px;
+}
+
+.challenge-card h3 {
+    margin-bottom: 15px;
+}
+
+.challenge-card ul {
+    list-style: none;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.challenge-card button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--white);
+    border: none;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.challenge-card button:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* =========================================
+5. DIARIO DELLA COMMUNITY (POSTS GRID)
+========================================= */
+
+.posts-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.posts-grid > h2,
+.posts-grid > p {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.posts-grid > p {
+    margin-bottom: 30px;
+}
+
+.post-card {
+    background-color: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    flex: 1 1 480px;
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(38, 53, 45, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-6px);
+}
+
+.post-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    background-color: var(--secondary-color);
+}
+
+.post-content {
+    padding: 28px 25px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.post-content h3 {
+    margin-bottom: 10px;
+}
+
+.post-content > p {
+    color: #4a5d53;
+    margin-bottom: 18px;
+}
+
+.post-content ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.hashtags {
+    display: inline-block;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 10px 14px;
+    border-radius: 10px;
+}
+
+/* =========================================
+6. CALENDARIO EDITORIALE
+========================================= */
+
+.editorial-summary {
+    background-color: var(--secondary-color);
+    padding: 80px 30px;
+}
+
+.editorial-summary ol {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.editorial-summary ol li {
+    background-color: var(--background-color);
+    padding: 20px 25px;
+    border-radius: 15px;
+    border-left: 5px solid var(--accent-color);
+}
+
+/* =========================================
+7. RESPONSIVE DESIGN (TABLET E SMARTPHONE)
+========================================= */
+
+@media (max-width: 900px) {
+    .profile-info {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-header ul {
+        text-align: left;
+    }
+}
+
+@media (max-width: 600px) {
+    header.profile-header,
+    .challenges-banner,
+    .posts-grid,
+    .editorial-summary {
+        padding: 55px 20px;
+    }
+
+    .profile-logo {
+        width: 140px;
+        height: 140px;
+    }
+
+    .post-card {
+        flex: 1 1 100%;
+    }
+
+    .post-card img {
+        height: 200px;
+    }
+}
