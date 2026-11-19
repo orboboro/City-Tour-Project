@@ -21,75 +21,16 @@ body {
   line-height: 1.6;
 }
 
-/* Header e Navbar identici alla Homepage */
+/* Header della pagina (la navbar interna usa navbar.css) */
 .hero {
   background: linear-gradient(135deg, var(--verde-natura), #284E3A);
   color: var(--avorio);
   border-bottom: 5px solid var(--acqua-marina);
 }
 
-.navbar-hero {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  border-bottom: 1px solid rgba(250, 247, 240, 0.15);
-}
-
-.navbar-hero .logo {
-  display: flex;
-  align-items: center;
-}
-
-.navbar-hero .logo img {
-  height: 75px;
-  width: auto;
-  border-radius: 4px;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.nav-links a {
-  color: var(--avorio);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.98rem;
-  padding: 0.55rem 0.95rem;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  transition: color 0.2s ease, border-color 0.2s ease;
-}
-
-/* Colore sabbia (#E8D6B4) al passaggio del mouse */
-.nav-links a:hover {
-  color: #E8D6B4;
-}
-
-/* Tasto attivo con testo bianco e riquadro pulito come nella tua foto */
-.nav-links a.attivo {
-  color: var(--avorio);
-  border-color: rgba(250, 247, 240, 0.75);
-}
-
-/* Mantiene il colore sabbia al passaggio del mouse anche sul tasto attivo */
-.nav-links a.attivo:hover {
-  color: #E8D6B4;
-  border-color: #E8D6B4;
-}
-
-
 .hero-contenuto {
   text-align: center;
-  padding: 2.5rem 1.5rem 3.5rem;
+  padding: 3rem 1.5rem 3.5rem;
 }
 
 .hero-contenuto h1 {

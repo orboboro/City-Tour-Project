@@ -1,0 +1,86 @@
+/* Stile condiviso per la Navbar di tutte le pagine secondarie */
+.navbar-hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-bottom: 1px solid rgba(250, 247, 240, 0.15);
+}
+
+.navbar-hero .logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-hero .logo img {
+  height: 75px;
+  width: auto;
+  border-radius: 4px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: var(--avorio, #FAF7F0);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.98rem;
+  padding: 0.55rem 0.95rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Colore sabbia (#E8D6B4) al passaggio del mouse */
+.nav-links a:hover {
+  color: #E8D6B4;
+}
+
+/* Riquadro bianco per la pagina attualmente aperta */
+.nav-links a.attivo {
+  color: var(--avorio, #FAF7F0);
+  border-color: rgba(250, 247, 240, 0.75);
+}
+
+.nav-links a.attivo:hover {
+  color: #E8D6B4;
+  border-color: #E8D6B4;
+}
+
+/* Pulsante Switch Lingua (IT / EN) */
+.btn-lingua {
+  background-color: var(--terracotta, #D7794C);
+  color: var(--avorio, #FAF7F0);
+  border: 1px solid var(--avorio, #FAF7F0);
+  padding: 0.45rem 0.85rem;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-lingua:hover {
+  background-color: #E8D6B4;
+  color: var(--testo-scuro, #24332B);
+  border-color: #E8D6B4;
+}
+
+/* Nasconde la barra superiore automatica aggiunta da Google Translate */
+.skiptranslate iframe,
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+body {
+  top: 0px !important;
+}

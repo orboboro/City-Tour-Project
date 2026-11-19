@@ -4,24 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chi siamo - Sentieri Partenopei</title>
+  <!-- Collegamento allo stile condiviso della navbar e allo stile specifico della pagina -->
+  <link rel="stylesheet" href="../navbar.css">
   <link rel="stylesheet" href="about-us.css">
 </head>
 <body>
 
   <header class="hero">
-    <nav class="navbar-hero">
-      <a href="../../index.html" class="logo">
-        <img src="../../assets/icons/logo_con_sfondo.svg" alt="Logo Sentieri Partenopei">
-      </a>
-      <div class="nav-links">
-        <a href="../../index.html">Homepage</a>
-        <a href="#">I nostri tour</a>
-        <a href="about-us.html" class="attivo">Chi siamo</a>
-        <a href="#">I nostri valori</a>
-        <a href="#">Turismo etico</a>
-        <a href="../lavora_con_noi/lavora-con-noi.html">Lavora con noi</a>
-      </div>
-    </nav>
+    <!-- La navbar e il pulsante lingua vengono caricati qui in automatico da navbar.js -->
+    <div id="navbar-comune"></div>
 
     <div class="hero-contenuto">
       <h1>Chi siamo e la nostra Vision</h1>
@@ -92,6 +83,8 @@
     </section>
   </main>
 
+  <!-- Script condiviso della navbar + script specifico della pagina -->
+  <script src="../navbar.js"></script>
   <script src="about-us.js"></script>
 </body>
 </html>
