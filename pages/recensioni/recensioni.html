@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recensioni - Tour guidati a Napoli</title>
+
+    <!-- 2) Poi il CSS specifico di questa pagina -->
+    <link rel="stylesheet" href="recensioni.css">
+</head>
+<body>
+
+    <!-- ===== HEADER: copia qui IDENTICO quello di index.html ===== -->
+    <header>
+        <nav>
+      <a href="../../index.html" class="logo">
+        <img src="../../assets/icons/logo_con_sfondo.svg" alt="Logo Sentieri Partenopei">
+      </a>
+      <div class="nav-links">
+        <a href="../../index.html">Homepage</a>
+        <a href="#">I nostri tour</a>
+        <a href="../about_us/about-us.html">Chi siamo</a>
+        <a href="#">I nostri valori</a>
+        <a href="#">Turismo etico</a>
+        <a href="recensioni.html" class="attivo">Lavora con noi</a>
+        <a href="../lavora_con_noi/lavora-con-noi.html">Lavora con noi</a>
+      </div>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ===== INTESTAZIONE ===== -->
+        <section class="reviews-intro">
+            <h1>Cosa dicono di noi</h1>
+            <p>Le esperienze dei viaggiatori che hanno scoperto Napoli con i nostri tour.</p>
+        </section>
+
+        <!-- ===== SEZIONE 1: LE 3 MIGLIORI ===== -->
+        <section class="top-reviews">
+            <h2>Le recensioni migliori</h2>
+            <!-- Questo contenitore viene riempito dal JavaScript -->
+            <div id="top-board" class="reviews-board"></div>
+        </section>
+
+        <!-- ===== SEZIONE 2: FILTRI + BACHECA SCORRIBILE ===== -->
+        <section class="all-reviews">
+            <h2>Cerca tra tutte le recensioni</h2>
+
+            <!-- Ogni pulsante ha data-filter: è il "nome" del filtro che JS leggerà -->
+            <div class="filters">
+                <button class="filter-btn active" data-filter="tutte">Tutte</button>
+                <button class="filter-btn" data-filter="migliori">Migliori (4-5 ★)</button>
+                <button class="filter-btn" data-filter="peggiori">Peggiori (1-2 ★)</button>
+                <button class="filter-btn" data-filter="foto">Con foto</button>
+                <button class="filter-btn" data-filter="Tour Marittimo">Tour Marittimo</button>
+                <button class="filter-btn" data-filter="Tour in Bici">Tour in Bici</button>
+                <button class="filter-btn" data-filter="Tour per Famiglie">Tour per Famiglie</button>
+                <button class="filter-btn" data-filter="Tour Gastronomico">Tour Gastronomico</button>
+                <button class="filter-btn" data-filter="Tour Culturale">Tour Culturale</button>
+            </div>
+
+            <p id="results-count" class="results-count"></p>
+
+            <!-- Bacheca scorribile: l'altezza massima è nel CSS -->
+            <div id="filtered-board" class="reviews-board scrollable"></div>
+        </section>
+
+        <!-- ===== SEZIONE 3: FORM ===== -->
+        <section class="review-form-section">
+            <h2>Lascia la tua recensione</h2>
+
+            <form id="review-form" class="review-form">
+
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="tour">Tour che hai fatto</label>
+                <select id="tour" name="tour" required>
+                    <option value="">-- Scegli un tour --</option>
+                    <option>Tour Marittimo</option>
+                    <option>Tour in Bici</option>
+                    <option>Tour per Famiglie</option>
+                    <option>Tour Gastronomico</option>
+                    <option>Tour Culturale</option>
+                </select>
+
+                <label for="voto">Voto</label>
+                <select id="voto" name="voto" required>
+                    <option value="">-- Scegli un voto --</option>
+                    <option value="5">5 - ★★★★★</option>
+                    <option value="4">4 - ★★★★☆</option>
+                    <option value="3">3 - ★★★☆☆</option>
+                    <option value="2">2 - ★★☆☆☆</option>
+                    <option value="1">1 - ★☆☆☆☆</option>
+                    <option value="0">0 - ☆☆☆☆☆</option>
+                </select>
+
+                <label for="testo">La tua recensione</label>
+                <textarea id="testo" name="testo" rows="6" required></textarea>
+
+                <label for="foto">Foto (facoltative)</label>
+                <input type="file" id="foto" name="foto" accept="image/*" multiple>
+
+                <button type="submit" class="btn">Invia recensione</button>
+            </form>
+
+            <p id="form-message" class="form-message"></p>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER: copia qui IDENTICO quello di index.html ===== -->
+    <footer>
+        <p>&copy; 2026 - Tour guidati a Napoli</p>
+    </footer>
+
+    <script src="recensioni.js"></script>
+</body>
+</html>
