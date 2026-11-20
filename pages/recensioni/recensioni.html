@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recensioni - Tour guidati a Napoli</title>
 
+    <!-- 1) Prima il CSS condiviso della navbar (con ../../) -->
+    <link rel="stylesheet" href="../navbar.css">
     <!-- 2) Poi il CSS specifico di questa pagina -->
     <link rel="stylesheet" href="recensioni.css">
 </head>
@@ -12,21 +14,8 @@
 
     <!-- ===== HEADER: copia qui IDENTICO quello di index.html ===== -->
     <header>
-        <nav>
-      <a href="../../index.html" class="logo">
-        <img src="../../assets/icons/logo_con_sfondo.svg" alt="Logo Sentieri Partenopei">
-      </a>
-      <div class="nav-links">
-        <a href="../../index.html">Homepage</a>
-        <a href="#">I nostri tour</a>
-        <a href="../about_us/about-us.html">Chi siamo</a>
-        <a href="#">I nostri valori</a>
-        <a href="#">Turismo etico</a>
-        <a href="recensioni.html" class="attivo">Lavora con noi</a>
-        <a href="../lavora_con_noi/lavora-con-noi.html">Lavora con noi</a>
-      </div>
-            </ul>
-        </nav>
+        <!-- Questo div vuoto viene riempito in automatico da navbar.js -->
+        <div id="navbar-comune"></div>
     </header>
 
     <main>
@@ -119,6 +108,7 @@
         <p>&copy; 2026 - Tour guidati a Napoli</p>
     </footer>
 
+    <script src="../navbar.js"></script>
     <script src="recensioni.js"></script>
 </body>
 </html>
