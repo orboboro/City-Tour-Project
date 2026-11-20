@@ -36,6 +36,7 @@ h1, h2, h3 {
    andare in conflitto con l'header della navbar
 ========================================= */
 
+
 header.profile-header {
     background-color: var(--primary-color);
     color: var(--background-color);
