@@ -3,32 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lavora con noi - Percorsi Culturali Napoli</title>
+  <title>Lavora con noi - Sentieri Partenopei</title>
+  <!-- Collegamento allo stile condiviso della navbar e allo stile specifico della pagina -->
+  <link rel="stylesheet" href="../navbar.css">
   <link rel="stylesheet" href="lavora-con-noi.css">
 </head>
 <body>
 
-    <header class="hero">
-    <nav class="navbar-hero">
-      <a href="../../index.html" class="logo">
-        <img src="../../assets/icons/logo_con_sfondo.svg" alt="Logo Sentieri Partenopei">
-      </a>
-      <div class="nav-links">
-        <a href="../../index.html">Homepage</a>
-        <a href="#">I nostri tour</a>
-        <a href="../about_us/about-us.html">Chi siamo</a>
-        <a href="#">I nostri valori</a>
-        <a href="#">Turismo etico</a>
-        <a href="lavora-con-noi.html" class="attivo">Lavora con noi</a>
-      </div>
-    </nav>
+  <header class="hero">
+    <!-- La navbar e il pulsante lingua vengono caricati qui in automatico da navbar.js -->
+    <div id="navbar-comune"></div>
 
     <div class="hero-contenuto">
       <h1>Diventa guida dei nostri percorsi a Napoli</h1>
       <p>Sei uno studente appassionato di arte, storia o cultura urbana? Scopri cosa significa guidare un tour con noi e invia la tua candidatura.</p>
     </div>
   </header>
-
 
   <main class="container">
     <!-- USER STORY 1: Presentazione dei 5 tour e del ruolo -->
@@ -91,8 +81,8 @@
             <input type="text" id="lingue" placeholder="Es. Inglese B2, Spagnolo A2">
           </div>
           <div class="campo">
-            <label for="esperienze">Esperienze passate, volontariato o passioni</label>
-            <textarea id="esperienze" rows="4" placeholder="Raccontaci se hai già fatto da guida, animazione, teatro, volontariato o perché ti piacerebbe partecipare..."></textarea>
+            <label for="esperienze">Esperienze passate, volontariato o passioni *</label>
+            <textarea id="esperienze" rows="4" placeholder="Raccontaci se hai già fatto da guida, animazione, teatro, volontariato o perché ti piacerebbe partecipare..." required></textarea>
           </div>
         </div>
 
@@ -104,6 +94,8 @@
     </section>
   </main>
 
+  <!-- Script condiviso della navbar + script specifico della pagina -->
+  <script src="../navbar.js"></script>
   <script src="lavora-con-noi.js"></script>
 </body>
 </html>

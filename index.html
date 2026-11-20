@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="it">
 
@@ -10,11 +9,11 @@
 
     <meta name="description" content="Scopri Napoli attraverso esperienze e tour sostenibili, tra cultura, tradizioni e comunità locale.">
 
+    <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="css/index.css">
     <script src="js/script.js" defer></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"> <!-- css per la mappa -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script> <!-- script per la mappa -->
-   
+    <link rel="stylesheet" href="https://unpkg.com"> <!-- css per la mappa -->
+    <script src="https://unpkg.com"></script> <!-- script per la mappa -->
 </head>
 
 <body>
@@ -25,7 +24,6 @@
 
             <a href="#home" class="logo">
                 <img src="assets/icons/logo_con_sfondo.svg" alt="Logo Sentieri Partenopei">
-        
             </a>
 
             <ul>
@@ -36,6 +34,7 @@
                 <li><a href="#consigli">Turismo etico</a></li>
                 <li><a href= "pages/recensioni/recensioni.html">Recensioni</li>
                 <li><a href="pages/lavora_con_noi/lavora-con-noi.html">Lavora con noi</a></li>
+                <li><button type="button" id="btn-lingua" class="btn-lingua">EN</button></li>
             </ul>
 
         </nav>
@@ -82,6 +81,10 @@
                 un legame tra visitatori, territorio e comunità locale,
                 valorizzando le tradizioni e l'identità napoletana.
             </p>
+
+            <a href="pages/about_us/about-us.html" class="btn">
+                Scopri di più su di noi
+            </a>
 
         </section>
 
@@ -141,11 +144,11 @@
             <!-- MAPPA DINAMICA -->
 
             <div id="map-button">
-            <button id="indietro" class="btn" style="display: none;">← Tutti i tour</button>
-            <br></br>
-            <h3 id="titolo-tour" ></h3>
+                <button id="indietro" class="btn" style="display: none;">← Tutti i tour</button>
+                <br><br>
+                <h3 id="titolo-tour"></h3>
             </div>
-            <div id="mappa" style="height: 500px;  width: 800px"></div>
+            <div id="mappa" style="height: 500px; width: 800px"></div>
             <script src="map/tours.js"></script>
             <script src="map/map_dynamics.js"></script>
 
@@ -216,7 +219,7 @@
                 Unisciti a noi e diventa parte del cambiamento.
             </p>
 
-            <a href="#contatti" class="btn">
+            <a href="pages/lavora_con_noi/lavora-con-noi.html" class="btn">
                 Collabora con noi
             </a>
 
@@ -242,7 +245,7 @@
             <ul>
                 <li><a href="#home">Homepage</a></li>
                 <li><a href="#tour">Tour</a></li>
-                <li><a href="#chi-siamo">Chi siamo</a></li>
+                <li><a href="pages/about_us/about-us.html">Chi siamo</a></li>
                 <li><a href="pages/lavora_con_noi/lavora-con-noi.html">Lavora con noi</a></li>
             </ul>
         </nav>
@@ -253,5 +256,7 @@
 
     </footer>
 
+    <!-- Script condiviso per il pulsante traduzione -->
+    <script src="pages/navbar.js"></script>
 </body>
 </html>

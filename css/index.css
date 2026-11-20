@@ -89,6 +89,25 @@ header nav {
     gap: 25px;
 }
 
+.btn-lingua {
+  background-color: #D7794C;
+  color: #FAF7F0;
+  border: 1px solid #FAF7F0;
+  padding: 0.45rem 0.85rem;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-lingua:hover {
+  background-color: #E8D6B4;
+  color: #24332B;
+  border-color: #E8D6B4;
+}
+
+
 .logo {
     display: flex;
     flex-direction: column;
