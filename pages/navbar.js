@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <a href="../../index.html">Homepage</a>
           <a href="#">I nostri tour</a>
           <a href="../about_us/about-us.html">Chi siamo</a>
-          <a href="#">I nostri valori</a>
+          <a href="../social/social.html">Social</a>
           <a href="../recensioni/recensioni.html">Recensioni</a>
           <a href="../lavora_con_noi/lavora-con-noi.html">Lavora con noi</a>
           <button type="button" id="btn-lingua" class="btn-lingua">EN</button>

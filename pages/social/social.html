@@ -4,13 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sentieri Partenopei - Community & Social</title>
-   <link rel="stylesheet" href="css/index.css">
-   <link rel="stylesheet" href="css/social.css">
+
+    <!-- 1) Prima il CSS condiviso della navbar (con ../../) -->
+    <link rel="stylesheet" href="../navbar.css">
+    <!-- 2) Poi il CSS specifico di questa pagina -->
+     
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="social.css">
 </head>
 <body>
 
     <!-- 1. PROFILO E IDENTITÀ SOCIAL -->
     <header class="profile-header">
+        <!-- Questo div vuoto viene riempito in automatico da navbar.js -->
+        <div id="navbar-comune"></div>
         <div class="profile-info">
             <img src="logo-sentieri.png" alt="Logo Sentieri Partenopei" class="profile-logo">
             <div>
@@ -138,6 +145,8 @@
         </section>
 
     </main>
+
+    <script src="../navbar.js"></script>
 
 </body>
 </html>
