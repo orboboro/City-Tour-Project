@@ -21,70 +21,12 @@ body {
   line-height: 1.6;
 }
 
+/* Header della pagina (la navbar interna usa navbar.css) */
 .hero {
   background: linear-gradient(135deg, var(--verde-natura), #284E3A);
   color: var(--avorio);
   border-bottom: 5px solid var(--acqua-marina);
 }
-
-.navbar-hero {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  border-bottom: 1px solid rgba(250, 247, 240, 0.15);
-}
-
-.navbar-hero .logo {
-  display: flex;
-  align-items: center;
-}
-
-.navbar-hero .logo img {
-  height: 75px;
-  width: auto;
-  border-radius: 4px;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.nav-links a {
-  color: var(--avorio);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.98rem;
-  padding: 0.55rem 0.95rem;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  transition: color 0.2s ease, border-color 0.2s ease;
-}
-
-/* Colore sabbia (#E8D6B4) al passaggio del mouse */
-.nav-links a:hover {
-  color: #E8D6B4;
-}
-
-/* Tasto attivo con testo bianco e riquadro pulito come nella tua foto */
-.nav-links a.attivo {
-  color: var(--avorio);
-  border-color: rgba(250, 247, 240, 0.75);
-}
-
-/* Mantiene il colore sabbia al passaggio del mouse anche sul tasto attivo */
-.nav-links a.attivo:hover {
-  color: #E8D6B4;
-  border-color: #E8D6B4;
-}
-
 
 .hero-contenuto {
   text-align: center;
@@ -102,7 +44,6 @@ body {
   font-size: 1.1rem;
   opacity: 0.95;
 }
-
 
 .container {
   max-width: 1100px;
@@ -143,16 +84,17 @@ h2 {
   border-bottom: 1px solid var(--sabbia);
 }
 
+/* Immagine fissata in cima alla card */
 .foto-tour {
   display: block;
   width: 100%;
   height: 180px;
-  object-fit: cover; /* Taglia l'immagine in modo proporzionato senza schiacciarla */
+  object-fit: cover;
   border-radius: 6px;
   margin-bottom: 1rem;
-  flex-shrink: 0; /* Impedisce alla foto di rimpicciolirsi se il testo è lungo */
+  border: 1px solid var(--sabbia);
+  flex-shrink: 0;
 }
-
 
 .card-tour h3 {
   color: var(--verde-natura);
@@ -161,7 +103,7 @@ h2 {
 }
 
 .dettaglio-ruolo {
-  background-color: rgba(232, 214, 180, 0.35); /* Sabbia leggero */
+  background-color: rgba(232, 214, 180, 0.35);
   border-left: 3px solid var(--acqua-marina);
   padding: 0.85rem;
   border-radius: 6px;
@@ -253,7 +195,7 @@ textarea {
 input:focus, textarea:focus {
   outline: none;
   border-color: var(--verde-natura);
-  box-shadow: 0 0 0 3px rgba(135, 184, 176, 0.3); /* Acqua marina */
+  box-shadow: 0 0 0 3px rgba(135, 184, 176, 0.3);
 }
 
 .nota {
@@ -324,7 +266,7 @@ input:focus, textarea:focus {
   display: block;
   margin-top: 1.5rem;
   padding: 1.2rem;
-  background-color: rgba(135, 184, 176, 0.25); /* Acqua marina chiaro */
+  background-color: rgba(135, 184, 176, 0.25);
   color: var(--verde-natura);
   border: 2px solid var(--verde-natura);
   border-radius: 6px;
